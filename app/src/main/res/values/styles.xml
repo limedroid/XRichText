@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:screenOrientation">landscape</item>
+    </style>
+
+</resources>
