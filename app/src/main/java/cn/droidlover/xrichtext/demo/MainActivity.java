@@ -1,11 +1,14 @@
 package cn.droidlover.xrichtext.demo;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.List;
 
+import cn.droidlover.xrichtext.ImageLoader;
 import cn.droidlover.xrichtext.XRichText;
 
 /**
@@ -34,19 +37,16 @@ public class MainActivity extends Activity {
 
         richText
                 .callback(new XRichText.BaseClickCallback() {
-
                     @Override
                     public boolean onLinkClick(String url) {
                         showMsg(url);
                         return true;
                     }
-
                     @Override
                     public void onImageClick(List<String> urlList, int position) {
                         super.onImageClick(urlList, position);
                         showMsg("图片:" + position);
                     }
-
                     @Override
                     public void onFix(XRichText.ImageHolder holder) {
                         super.onFix(holder);
@@ -63,12 +63,12 @@ public class MainActivity extends Activity {
                         holder.setHeight(400);
                     }
                 })
-//                .imageDownloader(new ImageLoader() {        //如果不设置，有默认的下载器
-//                    @Override
-//                    public Bitmap getBitmap(String url) throws IOException {
-//                        return UILKit.getLoader().loadImageSync(url);
-//                    }
-//                })
+                .imageDownloader(new ImageLoader() {        //如果不设置，有默认的下载器
+                    @Override
+                    public Bitmap getBitmap(String url) throws IOException {
+                        return UILKit.getLoader().loadImageSync(url);
+                    }
+                })
                 .text(TEXT);
     }
 
