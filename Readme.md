@@ -13,6 +13,9 @@
 * Gradle : compile 'cn.droidlover:XRichText:1.0.0'
 * Github : [XRichText](https://github.com/limedroid/XRichText.git)
 
+### 特别说明:
+**可以直接调用text方法显示html，其他的接口只是应对特殊场景的。**
+
 ### 主要特性 
 
 * 自定义超链接link的点击
