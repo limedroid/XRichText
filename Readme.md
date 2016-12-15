@@ -116,6 +116,8 @@ richText
 * ClickCallback接口有默认实现类BaseClickCallback,可以直接使用此类重写需要的方法。
 
 
+> 我的另一个项目: [**XDroid**](https://github.com/limedroid/XDroid) ， 一个轻量级的Android快速开发框架
+
 
 
 
