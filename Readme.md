@@ -8,15 +8,38 @@
   <img src="art/xrichtext.gif" alt="XRecyclerView" />
 </p>
 
-### 使用
+## 使用
 
-* Gradle : compile 'cn.droidlover:XRichText:1.0.0'
 * Github : [XRichText](https://github.com/limedroid/XRichText.git)
 
-### 特别说明:
+### step1 
+
+在根项目的`build.gradle`文件中添加
+
+```groovy
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+### step2
+
+添加依赖
+
+```groovy
+dependencies {
+	    compile 'com.github.limedroid:XRichText:v1.0.0'
+}
+```
+
+
+## 特别说明:
 **可以直接调用text方法显示html，其他的接口只是应对特殊场景的。**
 
-### 主要特性 
+## 主要特性 
 
 * 自定义超链接link的点击
 * 自定义图片img的点击
@@ -26,13 +49,13 @@
 * 内置图片下载器
 * 可自定义图片下载器，如使用universal image loader、Picasso、Glide等
 
-### 实现原理
+## 实现原理
 
 * spanned
 * 线程池
 * 自定义ImageGetter
 
-### 示例
+## 示例
 ```xml
 <cn.droidlover.xrichtext.XRichText
             android:id="@+id/richText"
@@ -83,7 +106,7 @@ richText
                 .text(TEXT);
 ```
 
-### api说明
+## api说明
 
 * onLinkClick(String url) 当点击超链接时触发，url为点击的url
 * onImageClick(List<String> urlList, int position) 当点击图片时触发，urlList为图片的url集合，position为被点击的位置，从0开始
